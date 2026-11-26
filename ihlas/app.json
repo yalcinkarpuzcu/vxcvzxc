@@ -20,6 +20,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "ffb60597-01a8-4813-bb28-ce4f8b00f5f2"
+      }
+    },
+    "owner": "yalcink"
   }
 }
