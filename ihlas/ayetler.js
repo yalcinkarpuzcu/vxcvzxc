@@ -1,0 +1,21 @@
+// Kısa, umut ve cesaret veren ayetlerin Türkçe mealleri.
+export const AYETLER = [
+  { m: 'Elbette zorluğun yanında bir kolaylık vardır. Gerçekten, zorluğun yanında bir kolaylık daha vardır.', k: 'İnşirah, 94/5-6' },
+  { m: 'Allah\'ın rahmetinden ümidinizi kesmeyin.', k: 'Zümer, 39/53' },
+  { m: 'Kim Allah\'a tevekkül ederse, O ona yeter.', k: 'Talak, 65/3' },
+  { m: 'Allah kimseye gücünün yetmeyeceği bir yük yüklemez.', k: 'Bakara, 2/286' },
+  { m: 'Gevşemeyin, hüzünlenmeyin. Eğer inanıyorsanız en üstün olan sizsiniz.', k: 'Âl-i İmrân, 3/139' },
+  { m: 'Üzülme, çünkü Allah bizimle beraberdir.', k: 'Tevbe, 9/40' },
+  { m: 'Biliniz ki kalpler ancak Allah\'ı anmakla huzur bulur.', k: 'Ra\'d, 13/28' },
+  { m: 'Beni anın ki ben de sizi anayım.', k: 'Bakara, 2/152' },
+  { m: 'Rabbin seni bırakmadı, sana darılmadı.', k: 'Duhâ, 93/3' },
+  { m: 'Allah bize yeter, O ne güzel vekildir.', k: 'Âl-i İmrân, 3/173' },
+  { m: 'Eğer yüz çevirirlerse de ki: Bana Allah yeter. O\'ndan başka ilah yoktur. Ben yalnız O\'na tevekkül ettim.', k: 'Tevbe, 9/129' },
+  { m: 'Ey iman edenler! Sabır ve namazla yardım dileyin. Şüphesiz Allah sabredenlerle beraberdir.', k: 'Bakara, 2/153' },
+  { m: 'Kullarım sana beni sorarsa, şüphesiz ben yakınım. Dua edenin duasına karşılık veririm.', k: 'Bakara, 2/186' },
+  { m: 'Bana dua edin, size icabet edeyim.', k: 'Mü\'min, 40/60' },
+  { m: 'Allah\'ın rahmeti her şeyi kuşatmıştır.', k: 'A\'râf, 7/156' },
+  { m: 'Şüphesiz Allah, sabredenlerle beraberdir.', k: 'Enfâl, 8/46' },
+  { m: 'Allah, tevekkül edenleri sever.', k: 'Âl-i İmrân, 3/159' },
+  { m: 'Sizin için hayırlı olduğu halde hoşlanmadığınız şeyler olabilir.', k: 'Bakara, 2/216' },
+];

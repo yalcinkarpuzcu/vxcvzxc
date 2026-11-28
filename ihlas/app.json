@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "İhlas Sayaç",
+    "name": "Hasbi Rabbi Cellallah",
     "slug": "ihlas",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -26,6 +26,9 @@
         "projectId": "ffb60597-01a8-4813-bb28-ce4f8b00f5f2"
       }
     },
-    "owner": "yalcink"
+    "owner": "yalcink",
+    "plugins": [
+      "expo-notifications"
+    ]
   }
 }

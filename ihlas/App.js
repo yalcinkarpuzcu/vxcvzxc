@@ -4,6 +4,9 @@ import {
 } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { ayetleriKapat, ayetleriPlanla } from './bildirim';
+
+const AYET_KEY = 'ayet_bildirim';
 
 const KEY = 'sayaclar_v2';
 const ESKI = 'ihlas_sayac';
@@ -16,6 +19,7 @@ export default function App() {
   const [modal, setModal] = useState(false);
   const [ad, setAd] = useState('');
   const [hedefYazi, setHedefYazi] = useState('40');
+  const [ayetAcik, setAyetAcik] = useState(true);
 
   useEffect(() => {
     (async () => {
@@ -31,6 +35,12 @@ export default function App() {
           setListe([{ id, ad: 'İhlâs', hedef: 40, sayi: isNaN(eski) ? 0 : eski }]);
           setAktif(id);
         }
+      } catch (e) {}
+      try {
+        const a = await AsyncStorage.getItem(AYET_KEY);
+        const acik = a !== 'kapali';
+        setAyetAcik(acik);
+        if (acik) await ayetleriPlanla();
       } catch (e) {}
       setYuklendi(true);
     })();
@@ -71,6 +81,19 @@ export default function App() {
         },
       },
     ]);
+  };
+
+  const ayetDegistir = async () => {
+    if (ayetAcik) {
+      await ayetleriKapat();
+      setAyetAcik(false);
+      AsyncStorage.setItem(AYET_KEY, 'kapali').catch(() => {});
+    } else {
+      const ok = await ayetleriPlanla();
+      if (!ok) return Alert.alert('Bildirim izni gerekli', 'Telefon ayarlarından bildirimlere izin verin.');
+      setAyetAcik(true);
+      AsyncStorage.setItem(AYET_KEY, 'acik').catch(() => {});
+    }
   };
 
   const ekle = () => {
@@ -115,6 +138,9 @@ export default function App() {
           <Pressable onPress={sifirla} style={s.btn}><Text style={s.btnYazi}>Sıfırla</Text></Pressable>
           <Pressable onPress={sil} style={s.btn}><Text style={s.btnYazi}>Sil</Text></Pressable>
         </View>
+        <Pressable onPress={ayetDegistir} style={[s.btn, { marginTop: 16 }]}>
+          <Text style={s.btnYazi}>Ayet bildirimleri: {ayetAcik ? 'Açık' : 'Kapalı'}</Text>
+        </Pressable>
       </View>
 
       <Modal visible={modal} transparent animationType="fade" onRequestClose={() => setModal(false)}>
